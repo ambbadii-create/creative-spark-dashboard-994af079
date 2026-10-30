@@ -1,0 +1,110 @@
+{
+  "source": {
+    "type": "github",
+    "repository": "ambbadii-create/creative-spark-dashboard",
+    "visibility": "public",
+    "acquired": "zip download of refs/heads/main into /tmp/csd",
+    "template_revision": "tanstack_start_ts_current-3341755609d5"
+  },
+  "target": {
+    "stack": "TanStack Start v1 + Tailwind v4 (identical template revision and identical package.json to source)",
+    "dependency_merge": "no changes required; source package.json byte-identical to target package.json"
+  },
+  "capabilities": [
+    {
+      "capability": "application code (components, lib, routes, styles)",
+      "source": "src/ + public/ of the repository",
+      "outcome": "migrated: all 54 source-only files copied, 4 differing shared files overwritten (__root.tsx, index.tsx, styles.css, routeTree.gen.ts)",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "routes / pages",
+      "source": "src/routes/*.tsx",
+      "outcome": "migrated: /, /budgets, /stocks, /achats, /ventes, /tresorerie, /comptabilite, /couts, /reporting, /administration",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "database schema",
+      "source": "none detected (inspect_external_project: schema_source absent, schema_tables [])",
+      "outcome": "not applicable: application state lives in browser localStorage stores (src/lib/{stock,budget,sales,purchase}/store.tsx) seeded from demo.ts modules",
+      "status": "verified",
+      "next_action": "none unless the user wants persistent shared data"
+    },
+    {
+      "capability": "application records",
+      "source": "no record export in repository (record_export.coverage = absent)",
+      "outcome": "not applicable: no server-side data store exists; the app ships seeded demo data",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "authentication / user identities",
+      "source": "none detected (no supabase, no auth provider, no login route)",
+      "outcome": "not applicable: source has no user accounts to import",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "authorization / roles",
+      "source": "none detected",
+      "outcome": "not applicable",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "uploaded file bytes / storage",
+      "source": "none detected",
+      "outcome": "not applicable",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "external providers (payments, email, AI, analytics)",
+      "source": "none detected; environment_variables [] in inspection manifest",
+      "outcome": "not applicable: no third-party service keys required",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "public endpoints / webhooks / callbacks",
+      "source": "none detected (no src/routes/api)",
+      "outcome": "not applicable",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "schedules / cron",
+      "source": "none detected",
+      "outcome": "not applicable",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "secrets / environment variables",
+      "source": "none detected",
+      "outcome": "not applicable: nothing to request through the secret flow",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "project instructions (AGENTS.md)",
+      "source": "AGENTS.md of the repository",
+      "outcome": "migrated: purchase-order/stock-store coupling rule carried into this project's AGENTS.md",
+      "status": "verified",
+      "next_action": "none"
+    },
+    {
+      "capability": "verification",
+      "source": "tests + live preview",
+      "outcome": "build OK; 37 tests pass across 5 files; all 10 routes render with correct titles and headings and no console or page errors; home page charts (2 charts + donut) confirmed drawn with data",
+      "status": "verified",
+      "next_action": "none"
+    }
+  ],
+  "cutover": {
+    "note": "No external callers, no provider dashboards, and no DNS changes involved; the repository remains the user's copy of the code."
+  },
+  "pending": []
+}
