@@ -114,8 +114,6 @@ export function CollectionsTab() {
   );
 }
 
-import { avgCollectionDelay } from "@/lib/sales/model";
-import type { Collection } from "@/lib/sales/model";
 function avgDelay(invoices: SalesInvoice[], cols: Collection[]) {
   const d = avgCollectionDelay(invoices, cols);
   return d === null ? "n.c." : `${d} j`;
