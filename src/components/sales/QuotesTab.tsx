@@ -3,7 +3,7 @@ import { ArrowRight, Copy, Eye, Pencil, Plus, Search } from "lucide-react";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Panel } from "@/components/app/ui-bits";
 import { Btn, Field, Select } from "@/components/budget/ui";
-import { sid } from "@/lib/stock/store";
+import { sid, useStock } from "@/lib/stock/store";
 import { useSales } from "@/lib/sales/store";
 import { addDays, isQuoteExpired, lineNet, QUOTE_NEXT, QUOTE_STATUSES, totals, type Quote, type QuoteStatus, type SalesLine } from "@/lib/sales/model";
 import { LinesEditor } from "./LinesEditor";
@@ -181,7 +181,6 @@ function QuoteView({ quote: x, onClose, onConvert }: { quote: Quote; onClose: ()
 }
 
 // Nom d'article par id (petit helper local)
-import { useStock } from "@/lib/stock/store";
 function useStockNames() {
   const { products } = useStock();
   return { products: Object.fromEntries(products.map((p) => [p.id, `${p.ref} · ${p.designation}`])) };

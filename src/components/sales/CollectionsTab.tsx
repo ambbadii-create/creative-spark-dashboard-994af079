@@ -3,7 +3,7 @@ import { Plus, Search } from "lucide-react";
 import { Panel } from "@/components/app/ui-bits";
 import { Btn, Select, StatCard, fmt } from "@/components/budget/ui";
 import { useSales } from "@/lib/sales/store";
-import { invoiceOutstanding, invoiceStatus, round2, type SalesInvoice } from "@/lib/sales/model";
+import { avgCollectionDelay, invoiceOutstanding, invoiceStatus, round2, type Collection, type SalesInvoice } from "@/lib/sales/model";
 import { CollectionDialog } from "./CollectionDialog";
 import { fdate, fmt2, rowCls, SalesInvoiceBadge, Table, Td, Th, today } from "./ui";
 
